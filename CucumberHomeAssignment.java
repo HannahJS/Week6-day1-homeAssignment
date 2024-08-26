@@ -3,6 +3,7 @@ package week6.day1;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -55,8 +56,14 @@ public class CucumberHomeAssignment {
 		
 		
 		/************** 4. Click on Accounts tab*************************************/
-		driver.findElement(By.xpath("(//span[contains(text(),'Accounts')])/parent::a[@title='Accounts']")).click();
+		WebElement wb=driver.findElement(By.xpath("//a[@href='/lightning/o/Account/home']"));
 		
+	      JavascriptExecutor executor = (JavascriptExecutor)driver;
+	      executor.executeScript("arguments[0].click();", wb);
+	      
+	     /*****STUCK!!!!!!!!!!!!!!!!*****/ 
+	      
+	      
 	}
 	
 	
